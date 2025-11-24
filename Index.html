@@ -1,0 +1,800 @@
+Index.html
+
+index.html
+<!doctype html>
+<html lang="it" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title data-i18n="page_title">PuraGo — Servizi di Pulizia / Cleaning / تنظيف</title>
+
+  <meta name="description" content="PuraGo - خدمات تنظيف احترافية للمنازل والمكاتب في لومبارديا. احجز الآن لتنظيف عميق أو عادي بأسعار تبدأ من 15 يورو." data-i18n="meta_description">
+  <meta name="keywords" content="تنظيف, خدمات تنظيف, تنظيف منازل, تنظيف مكاتب, لومبارديا, إيطاليا">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f7f8fb;
+  --card:#ffffff;
+  --accent:#4f46e5;
+  --accent-2:#7c3aed;
+  --muted:#6b7280;
+  --shadow:0 6px 20px rgba(15,23,42,0.08);
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:"Inter","Cairo",sans-serif;
+  background:linear-gradient(180deg,#f9f9fb,var(--bg));
+  color:#111827;
+  line-height:1.45;
+  padding:20px;
+}
+.container{max-width:1100px;margin:0 auto;}
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:18px;
+}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.logo{
+  width:46px;height:46px;
+  border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-weight:700;
+  box-shadow:var(--shadow)
+}
+nav{display:flex;gap:12px;align-items:center}
+nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:12px;font-weight:600}
+nav a.cta{background:var(--accent);color:white;padding:10px 14px}
+.lang-select select{
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.1);
+  font-weight:700;
+}
+
+/* HERO */
+.hero{
+  background:linear-gradient(180deg,rgba(124,58,237,0.06),rgba(79,70,229,0.03));
+  border-radius:20px;
+  padding:28px;
+  display:flex;
+  gap:20px;
+  align-items:center;
+  box-shadow:var(--shadow);
+  margin-bottom:18px;
+}
+.hero-left{flex:1}
+.eyebrow{
+  background:#fff;padding:6px 10px;
+  border-radius:999px;font-size:13px;color:var(--muted);
+  margin-bottom:12px;box-shadow:0 4px 12px rgba(0,0,0,0.06)
+}
+h1{font-size:30px;margin-bottom:10px;color:#0f172a}
+p.lead{color:var(--muted);margin-bottom:16px}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 14px;border-radius:12px;
+  font-weight:700;text-decoration:none;
+  cursor:pointer;border:0;
+}
+.btn-primary{background:var(--accent);color:white}
+.btn-outline{background:transparent;color:var(--accent);border:1px solid rgba(0,0,0,0.1)}
+
+/* CONTACT BUTTONS in HERO */
+.contact-box{
+  margin-top:14px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.contact-btn{
+  background:#fff;
+  padding:10px 14px;
+  border-radius:10px;
+  font-weight:600;
+  color:#4f46e5;
+  box-shadow:var(--shadow);
+  text-decoration:none;
+}
+
+/* RIGHT CARD */
+.hero-right{width:300px}
+.card{
+  background:#fff;padding:16px;border-radius:12px;
+  box-shadow:var(--shadow)
+}
+
+/* SERVICES */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;margin-top:20px
+}
+.service{
+  background:#fff;padding:14px;border-radius:12px;
+  box-shadow:var(--shadow);
+  display:flex;flex-direction:column;gap:10px
+}
+.icon{
+  width:52px;height:52px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-size:22px;
+}
+
+/* FEATURES */
+.features{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:18px 0;
+}
+.feature{
+  flex:1;min-width:160px;
+  background:linear-gradient(180deg,#ffffff,#f9f9ff);
+  padding:14px;border-radius:12px;
+  box-shadow:var(--shadow)
+}
+
+/* BOOKING */
+.booking{
+  margin-top:18px;
+  background:linear-gradient(180deg,#ffffff,#fbfbff);
+  padding:18px;border-radius:12px;
+  box-shadow:var(--shadow);
+}
+.form-row{
+  display:flex;gap:10px;flex-wrap:wrap
+}
+.field{
+  flex:1;min-width:160px;
+  display:flex;flex-direction:column;gap:8px
+}
+label{font-weight:600;font-size:14px;color:#0f172a}
+input, textarea, select{
+  padding:10px;border-radius:10px;
+  border:1px solid rgba(0,0,0,0.08);
+  outline:none;font-size:14px
+}
+textarea{min-height:96px;resize:vertical}
+.note{font-size:13px;color:var(--muted);margin-top:4px}
+
+footer{
+  margin-top:26px;
+  padding:14px;text-align:center;
+  color:var(--muted)
+}
+
+/* RESPONSIVE */
+@media(max-width:980px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .hero{flex-direction:column}
+  .hero-right{width:100%}
+}
+@media(max-width:640px){
+  body{padding:12px}
+  .grid{grid-template-columns:1fr}
+  h1{font-size:24px}
+  nav{display:none}
+}
+
+/* RTL support */
+html[dir="rtl"] body{direction:rtl;text-align:right}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+  <a class="brand" href="#">
+    <div class="logo">P</div>
+    <div>
+      <div style="font-weight:700" data-i18n="company_name">PuraGo</div>
+      <div style="font-size:12px;color:var(--muted)" data-i18n="tagline">
+        Servizi di pulizia professionali in Lombardia
+      </div>
+    </div>
+  </a>
+
+  <nav>
+    <a href="#services" data-i18n="nav_services">Servizi</a>
+    <a href="#pricing" data-i18n="nav_pricing">Prezzi</a>
+    <a href="#booking" class="cta" data-i18n="nav_booking">Prenota</a>
+
+    <div class="lang-select">
+      <select id="langSwitcher">
+        <option value="it">Italiano</option>
+        <option value="ar">العربية</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="eyebrow" data-i18n="eyebrow">Servizio veloce — Valutazione 4.9 ★</div>
+
+    <h1 data-i18n="hero_title">
+      Lascia che la tua casa brilli — Pulizie professionali e affidabili
+    </h1>
+
+    <p class="lead" data-i18n="hero_lead">
+      Offriamo pulizie per case e uffici في لومبارديا — prezzi chiari e servizio garantito.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#booking" data-i18n="cta_book">Inizia ora — Prenota</a>
+      <a class="btn btn-outline" href="#pricing" data-i18n="cta_prices">Vedi i prezzi</a>
+    </div>
+
+    <div class="contact-box">
+      <a class="contact-btn" href="https://wa.me/393882467779" data-i18n="contact_whatsapp">
+        WhatsApp: +39 388 246 7779
+      </a>
+
+      <a class="contact-btn" href="mailto:info.purago@gmail.com" data-i18n="contact_email">
+        Email: info.purago@gmail.com
+      </a>
+
+      <a class="contact-btn" href="tel:+393882467779" data-i18n="contact_call">
+        Call: +39 388 246 7779
+      </a>
+    </div>
+
+  </div>
+
+  <div class="hero-right">
+    <div class="card">
+      <div style="font-weight:700;margin-bottom:8px" data-i18n="package_title">
+        Pacchetto Inizio — Appartamento 1 camera
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:10px">
+
+        <div style="display:flex;justify-content:space-between;align-items:center;
+             padding:10px;border-radius:10px;background:#fff">
+          <div>
+            <div style="font-weight:700" data-i18n="quick_clean">Pulizia ordinaria</div>
+            <small class="muted" data-i18n="quick_clean_desc">
+              Spazzare، superfici، bagno e cucina
+            </small>
+          </div>
+          <div style="font-weight:800">€25</div>
+        </div>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;
+             padding:10px;border-radius:10px;background:#fff5f7">
+          <div>
+            <div style="font-weight:700" data-i18n="deep_clean">Pulizia profonda</div>
+            <small class="muted" data-i18n="deep_clean_desc">
+              Lavaggio tende، pulizia cucina completa
+            </small>
+          </div>
+          <div style="font-weight:800;color:#ef4444">€45</div>
+        </div>
+
+      </div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-size:13px;color:var(--muted)" data-i18n="langs">
+          Lingue: Italiano, العربية
+        </div>
+        <a class="btn btn-primary" href="#booking" style="padding:8px 12px;font-size:14px"
+           data-i18n="start_free">
+          Inizia gratis
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <h2 style="margin-bottom:10px" data-i18n="services_title">
+    I nostri servizi
+  </h2>
+
+  <div class="grid">
+    <div class="service">
+      <div style="display:flex;gap:10px">
+        <div class="icon" style="background:linear-gradient(135deg,#34d399,#10b981)">🧽</div>
+        <div>
+          <h3 data-i18n="service_regular">Pulizia ordinaria</h3>
+          <p class="muted" data-i18n="service_regular_desc">
+            Pulizie giornaliere o settimanali.
+          </p>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between">
+        <div class="muted" data-i18n="duration_short">Durata: 1-2 ore</div>
+        <div style="font-weight:700" data-i18n="from_15">da €15</div>
+      </div>
+    </div>
+
+    <div class="service">
+      <div style="display:flex;gap:10px">
+        <div class="icon" style="background:linear-gradient(135deg,#60a5fa,#3b82f6)">🧼</div>
+        <div>
+          <h3 data-i18n="service_deep">Pulizia profonda</h3>
+          <p class="muted" data-i18n="service_deep_desc">
+            Pulizia completa con prodotti speciali.
+          </p>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between">
+        <div class="muted" data-i18n="duration_long">Durata: 3-5 ore</div>
+        <div style="font-weight:700" data-i18n="from_35">da €35</div>
+      </div>
+    </div>
+
+    <div class="service">
+      <div style="display:flex;gap:10px">
+        <div class="icon" style="background:linear-gradient(135deg,#f97316,#fb923c)">🚚</div>
+        <div>
+          <h3 data-i18n="service_move">Sgombero e trasloco</h3>
+          <p class="muted" data-i18n="service_move_desc">
+            Sgombero o trasporto mobili.
+          </p>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between">
+        <div class="muted" data-i18n="on_request">Su richiesta</div>
+        <div style="font-weight:700" data-i18n="from_60">da €60</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2 style="margin:15px 0" data-i18n="why_title">Perché scegliere PuraGo?</h2>
+
+  <div class="features">
+    <div class="feature">
+      <strong data-i18n="feat_trusted">Team affidabile</strong>
+      <p class="muted" data-i18n="feat_trusted_desc">
+        Personale formato e controllato.
+      </p>
+    </div>
+
+    <div class="feature">
+      <strong data-i18n="feat_safe">Prodotti sicuri</strong>
+      <p class="muted" data-i18n="feat_safe_desc">
+        Detergenti sicuri per famiglie.
+      </p>
+    </div>
+
+    <div class="feature">
+      <strong data-i18n="feat_fast">Servizio rapido</strong>
+      <p class="muted" data-i18n="feat_fast_desc">
+        Prenotazioni flessibili.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="booking" style="margin-top:20px">
+  <h2 style="margin-bottom:10px" data-i18n="booking_title">
+    Modulo di prenotazione
+  </h2>
+
+  <div class="booking">
+    <form id="bookingForm" onsubmit="return handleSubmit(event)">
+      <div class="form-row">
+
+        <div class="field">
+          <label data-i18n="label_name">Nome e cognome</label>
+          <input id="name" data-placeholder="ph_name" required>
+        </div>
+
+        <div class="field">
+          <label data-i18n="label_phone">Telefono</label>
+          <input id="phone" data-placeholder="ph_phone" required>
+        </div>
+
+        <div class="field">
+          <label data-i18n="label_email">Email (opzionale)</label>
+          <input id="email" data-placeholder="ph_email">
+        </div>
+
+      </div>
+
+      <div class="form-row" style="margin-top:10px">
+
+        <div class="field">
+          <label data-i18n="label_service">Scegli il servizio</label>
+          <select id="service" required>
+            <option value="" data-i18n="opt_choose">-- Scegli --</option>
+            <option value="Pulizia Ordinaria" data-i18n="opt_regular">Pulizia ordinaria — €15+</option>
+            <option value="Pulizia Profonda" data-i18n="opt_deep">Pulizia profonda — €35+</option>
+            <option value="Sgombero / Trasloco" data-i18n="opt_move">Sgombero / Trasloco — su richiesta</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label data-i18n="label_date">Data preferita</label>
+          <input id="date" data-placeholder="ph_date">
+          <div class="note" data-i18n="note_date">
+            Inserisci una data o un numero per essere contattato.
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:10px">
+        <label data-i18n="label_notes">Note aggiuntive</label>
+        <textarea id="notes" data-placeholder="ph_notes"></textarea>
+      </div>
+
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+
+        <button class="btn btn-primary" type="submit" data-i18n="btn_submit">
+          Invia richiesta
+        </button>
+
+        <a class="btn btn-outline" href="mailto:info.purago@gmail.com" data-i18n="email_direct">
+          Email Direct
+        </a>
+
+        <a class="btn btn-outline" href="tel:+393882467779" data-i18n="call_direct">
+          Call Direct
+        </a>
+
+        <a class="btn btn-outline" href="https://wa.me/393882467779" data-i18n="whatsapp_direct">
+          WhatsApp Direct
+        </a>
+
+        <div id="formMessage" style="color:var(--muted)"></div>
+
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> <span data-i18n="company_name_footer">PuraGo</span> · 
+  <span data-i18n="privacy">Privacy</span> · 
+  WhatsApp: +39 388 246 7779 · Email: info.purago@gmail.com
+</footer>
+
+</div> <script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+const translations = {
+
+  /* ---------------- ITALIANO ---------------- */
+  it: {
+    page_title:"PuraGo — Servizi di Pulizia / Cleaning / تنظيف",
+    meta_description:"PuraGo - Servizi di pulizia professionale per case e uffici in Lombardia. Prenota ora per pulizie profonde o standard a partire da 15€.",
+    company_name:"PuraGo",
+    tagline:"Servizi di pulizia professionali in Lombardia",
+
+    nav_services:"Servizi",
+    nav_pricing:"Prezzi",
+    nav_booking:"Prenota",
+
+    eyebrow:"Servizio veloce — Valutazione 4.9 ★",
+    hero_title:"Lascia che la tua casa brilli — Pulizie professionali e affidabili",
+    hero_lead:"Pulizie di case e uffici in Lombardia.",
+
+    cta_book:"Inizia ora — Prenota",
+    cta_prices:"Vedi i prezzi",
+
+    contact_whatsapp:"WhatsApp: +39 388 246 7779",
+    contact_email:"Email: info.purago@gmail.com",
+    contact_call:"Call: +39 388 246 7779",
+
+    package_title:"Pacchetto Inizio — Appartamento 1 camera",
+    quick_clean:"Pulizia ordinaria",
+    quick_clean_desc:"Spazzare, superfici, bagno e cucina",
+    deep_clean:"Pulizia profonda",
+    deep_clean_desc:"Lavaggio tende, pulizia cucina profonda",
+    langs:"Lingue: Italiano, Arabo",
+
+    start_free:"Inizia gratis",
+
+    services_title:"I nostri servizi",
+    service_regular:"Pulizia ordinaria",
+    service_regular_desc:"Pulizie regolari.",
+    duration_short:"Durata: 1-2 ore",
+    from_15:"da €15",
+
+    service_deep:"Pulizia profonda",
+    service_deep_desc:"Pulizia completa.",
+    duration_long:"Durata: 3-5 ore",
+    from_35:"da €35",
+
+    service_move:"Sgombero / Trasloco",
+    service_move_desc:"Sgombero o trasporto mobili.",
+    on_request:"Su richiesta",
+    from_60:"da €60",
+
+    why_title:"Perché scegliere PuraGo?",
+    feat_trusted:"Team affidabile",
+    feat_trusted_desc:"Personale formato.",
+    feat_safe:"Prodotti sicuri",
+    feat_safe_desc:"Per famiglie e animali.",
+    feat_fast:"Servizio rapido",
+    feat_fast_desc:"Prenotazioni flessibili.",
+
+    booking_title:"Modulo di prenotazione",
+    label_name:"Nome e cognome",
+    ph_name:"Mario Rossi",
+    label_phone:"Telefono",
+    ph_phone:"+39 3xx xxx xxxx",
+    label_email:"Email (opzionale)",
+    ph_email:"nome@email.com",
+
+    label_service:"Scegli il servizio",
+    opt_choose:"-- Scegli --",
+    opt_regular:"Pulizia ordinaria — €15+",
+    opt_deep:"Pulizia profonda — €35+",
+    opt_move:"Sgombero / Trasloco — su richiesta",
+
+    label_date:"Data preferita",
+    ph_date:"2025-12-01",
+    note_date:"Inserisci una data o telefono.",
+
+    label_notes:"Note aggiuntive",
+    ph_notes:"Dettagli...",
+
+    btn_submit:"Invia richiesta",
+    email_direct:"Email Direct",
+    call_direct:"Call Direct",
+    whatsapp_direct:"WhatsApp Direct",
+
+    company_name_footer:"PuraGo",
+    privacy:"Privacy"
+  },
+
+  /* ---------------- ARABIC ---------------- */
+  ar: {
+    page_title:"PuraGo — خدمات تنظيف / Cleaning / Servizi di Pulizia",
+    meta_description:"PuraGo - خدمة تنظيف احترافية للمنازل والمكاتب في لومبارديا. احجز الآن لتنظيف عميق أو عادي بأسعار تبدأ من 15 يورو.",
+    company_name:"PuraGo",
+    tagline:"خدمة تنظيف احترافية في لومبارديا",
+
+    nav_services:"خدماتنا",
+    nav_pricing:"الأسعار",
+    nav_booking:"احجز",
+
+    eyebrow:"خدمة سريعة — تقييم 4.9 ★",
+    hero_title:"خلّي بيتك يلمع — تنظيف احترافي وموثوق",
+    hero_lead:"تنظيف للمنازل والمكاتب في لومبارديا.",
+
+    cta_book:"ابدأ الآن — احجز",
+    cta_prices:"عرض الأسعار",
+
+    contact_whatsapp:"واتساب: +39 388 246 7779",
+    contact_email:"الإيميل: info.purago@gmail.com",
+    contact_call:"اتصال: +39 388 246 7779",
+
+    package_title:"باقة البداية — غرفة واحدة",
+    quick_clean:"تنظيف عام",
+    quick_clean_desc:"كنس ومسح وتنظيف حمام ومطبخ",
+    deep_clean:"تنظيف عميق",
+    deep_clean_desc:"غسيل ستائر وتنظيف عميق للمطبخ",
+    langs:"اللغات: إيطالي ، عربي",
+
+    start_free:"ابدأ مجاناً",
+
+    services_title:"خدماتنا",
+    service_regular:"تنظيف عام",
+    service_regular_desc:"تنظيف دوري.",
+    duration_short:"المدة: 1-2 ساعة",
+    from_15:"ابتداءً من €15",
+
+    service_deep:"تنظيف عميق",
+    service_deep_desc:"تنظيف شامل.",
+    duration_long:"المدة: 3-5 ساعات",
+    from_35:"ابتداءً من €35",
+
+    service_move:"تفريغ / نقل",
+    service_move_desc:"تفريغ وترتيب ونقل.",
+    on_request:"حسب الطلب",
+    from_60:"ابتداءً من €60",
+
+    why_title:"لماذا تختار PuraGo؟",
+    feat_trusted:"فريق موثوق",
+    feat_trusted_desc:"عمال مدربون.",
+    feat_safe:"منتجات آمنة",
+    feat_safe_desc:"مناسبة للأطفال والحيوانات.",
+    feat_fast:"خدمة سريعة",
+    feat_fast_desc:"حجز مرن وسريع.",
+
+    booking_title:"نموذج الحجز",
+    label_name:"الاسم الكامل",
+    ph_name:"مثال: أحمد محمد",
+    label_phone:"رقم الهاتف",
+    ph_phone:"+39 3xx xxx xxxx",
+    label_email:"البريد الإلكتروني (اختياري)",
+    ph_email:"name@example.com",
+
+    label_service:"اختر الخدمة",
+    opt_choose:"-- اختر --",
+    opt_regular:"تنظيف عام — €15+",
+    opt_deep:"تنظيف عميق — €35+",
+    opt_move:"تفريغ / نقل — حسب الطلب",
+
+    label_date:"التاريخ المفضل",
+    ph_date:"مثال: 2025-12-01",
+    note_date:"اكتب التاريخ أو رقم للتواصل.",
+
+    label_notes:"ملاحظات إضافية",
+    ph_notes:"تفاصيل...",
+
+    btn_submit:"أرسل الطلب",
+    email_direct:"إرسال إيميل",
+    call_direct:"اتصال مباشر",
+    whatsapp_direct:"واتساب مباشر",
+
+    company_name_footer:"PuraGo",
+    privacy:"سياسة الخصوصية"
+  },
+
+  /* ---------------- ENGLISH ---------------- */
+  en: {
+    page_title:"PuraGo — Cleaning / Servizi di Pulizia / تنظيف",
+    meta_description:"PuraGo - Professional cleaning services for homes and offices in Lombardy. Book now for deep or standard cleaning starting from €15.",
+    company_name:"PuraGo",
+    tagline:"Professional cleaning services in Lombardy",
+
+    nav_services:"Services",
+    nav_pricing:"Pricing",
+    nav_booking:"Book",
+
+    eyebrow:"Fast service — Rated 4.9 ★",
+    hero_title:"Make your home shine — Professional cleaning",
+    hero_lead:"Cleaning for homes & offices in Lombardy.",
+
+    cta_book:"Start now — Book",
+    cta_prices:"See prices",
+
+    contact_whatsapp:"WhatsApp: +39 388 246 7779",
+    contact_email:"Email: info.purago@gmail.com",
+    contact_call:"Call: +39 388 246 7779",
+
+    package_title:"Starter Package — 1 Bedroom",
+    quick_clean:"Regular clean",
+    quick_clean_desc:"Sweeping, wiping, bathroom & kitchen",
+    deep_clean:"Deep clean",
+    deep_clean_desc:"Curtains & full kitchen deep clean",
+    langs:"Languages: Italian, Arabic",
+
+    start_free:"Start free",
+
+    services_title:"Our services",
+    service_regular:"Regular clean",
+    service_regular_desc:"Standard cleaning.",
+    duration_short:"Duration: 1-2 hours",
+    from_15:"from €15",
+
+    service_deep:"Deep clean",
+    service_deep_desc:"Full cleaning.",
+    duration_long:"Duration: 3-5 hours",
+    from_35:"from €35",
+
+    service_move:"Clearance / Moving",
+    service_move_desc:"Furniture moving.",
+    on_request:"On request",
+    from_60:"from €60",
+
+    why_title:"Why choose PuraGo?",
+    feat_trusted:"Trusted team",
+    feat_trusted_desc:"Trained workers.",
+    feat_safe:"Safe products",
+    feat_safe_desc:"Family and pet friendly.",
+    feat_fast:"Fast service",
+    feat_fast_desc:"Flexible booking.",
+
+    booking_title:"Booking form",
+    label_name:"Full name",
+    ph_name:"Example: Ahmed Mohammed",
+    label_phone:"Phone number",
+    ph_phone:"+39 3xx xxx xxxx",
+    label_email:"Email (optional)",
+    ph_email:"you@example.com",
+
+    label_service:"Choose service",
+    opt_choose:"-- Choose --",
+    opt_regular:"Regular clean — €15+",
+    opt_deep:"Deep clean — €35+",
+    opt_move:"Clearance / Moving — on request",
+
+    label_date:"Preferred date",
+    ph_date:"2025-12-01",
+    note_date:"Enter date or phone.",
+
+    label_notes:"Additional notes",
+    ph_notes:"Details...",
+
+    btn_submit:"Send request",
+    email_direct:"Email Direct",
+    call_direct:"Call Direct",
+    whatsapp_direct:"WhatsApp Direct",
+
+    company_name_footer:"PuraGo",
+    privacy:"Privacy"
+  }
+};
+
+/* --------- Language switch -------- */
+function applyLanguage(lang){
+  const html=document.documentElement;
+
+  html.lang = lang;
+  html.dir  = (lang==="ar") ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key=el.getAttribute("data-i18n");
+    if(translations[lang][key]) { // Check if translation exists
+        el.textContent = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll("[data-placeholder]").forEach(el=>{
+    const key=el.getAttribute("data-placeholder");
+    if(translations[lang][key]) { // Check if translation exists
+        el.placeholder = translations[lang][key];
+    }
+  });
+}
+
+document.getElementById("langSwitcher").addEventListener("change", e=>{
+  applyLanguage(e.target.value);
+});
+
+/* default language = IT */
+applyLanguage("it");
+
+/* --------- Booking Submission -------- */
+function handleSubmit(e){
+  e.preventDefault();
+
+  const name=document.getElementById("name").value;
+  const phone=document.getElementById("phone").value;
+  const email=document.getElementById("email").value;
+  const service=document.getElementById("service").value;
+  const date=document.getElementById("date").value;
+  const notes=document.getElementById("notes").value;
+
+  const lang=document.getElementById("langSwitcher").value;
+  const t=translations[lang];
+
+  const msg = 
+`${t.booking_title}
+${t.label_name}: ${name}
+${t.label_phone}: ${phone}
+${t.label_email}: ${email || t.ph_email}
+${t.label_service}: ${service}
+${t.label_date}: ${date}
+${t.label_notes}: ${notes}`;
+
+  /* Copy to clipboard */
+  navigator.clipboard.writeText(msg);
+
+  /* WhatsApp send */
+  const encoded = encodeURIComponent(msg);
+  const wa = "https://wa.me/393882467779?text="+encoded;
+
+  window.open(wa, "_blank");
+
+  document.getElementById("formMessage").textContent =
+    (lang==="ar") ? "تم إرسال الطلب عبر واتساب" :
+    (lang==="it") ? "Richiesta inviata su WhatsApp" :
+                    "Request sent via WhatsApp";
+
+  e.target.reset();
+}
+</script>
+
+</body>
+</html>
